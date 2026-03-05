@@ -1,5 +1,5 @@
 import LandingPageLayout from "../Components/Layout/LandingPageLayout";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import InformasiPemesan from "../Components/Organism/BookingComponents/InformasiPemesan";
 import DataKendaraan from "../Components/Organism/BookingComponents/DataKendaraan";
 import PilihLayanan from "../Components/Organism/BookingComponents/PilihLayanan";
@@ -24,6 +24,8 @@ const tabs = [
 
 function Booking() {
     const { props } = usePage();
+    const { flash } = props;
+
     const [currentStep, setcurrentStep] = useState(0);
     const { data, setData, post, processing, errors, reset } = useForm({
         customer_name: "",
@@ -38,8 +40,7 @@ function Booking() {
     });
     const [isSuccessModalOpen, setIsSuccessModalOpen] = useState(false);
     const [copied, setCopied] = useState(false);
-    // reservation code returned from server
-    const [bookingId, setBookingId] = useState("");
+    const [bookingCode, setBookingCode] = useState("");
 
     const nextStep = () => {
         setcurrentStep((prev) => prev + 1);
@@ -54,7 +55,12 @@ function Booking() {
         setData(name, value);
     };
 
-    console.log("isi props = ", props);
+    useEffect(() => {
+        if (flash?.success && flash?.reservation_code) {
+            setBookingCode(flash.reservation_code);
+            setIsSuccessModalOpen(true);
+        }
+    }, [JSON.stringify(flash)]);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -62,18 +68,18 @@ function Booking() {
         post("/booking", {
             preserveScroll: true,
             onSuccess: (page) => {
-                // grab code from flash data
-                const code = page.props.flash?.reservation_code || "";
-                console.log("Reservation Code:", code);
-                setBookingId(code);
-                setIsSuccessModalOpen(true);
+                const flashData = page.props.flash;
+                if (flashData?.success && flashData?.reservation_code) {
+                    setBookingCode(flashData.reservation_code);
+                    setIsSuccessModalOpen(true);
+                }
             },
         });
     };
 
     const handleCopy = async () => {
-        if (!bookingId) return;
-        await navigator.clipboard.writeText(bookingId);
+        if (!bookingCode) return;
+        await navigator.clipboard.writeText(bookingCode);
         setCopied(true);
 
         setTimeout(() => {
@@ -87,7 +93,6 @@ function Booking() {
                 <div className="py-10 flex items-center justify-center gap-4 overflow-x-auto">
                     {tabs.map((tab, i) => (
                         <div key={i} className="flex items-center gap-4">
-                            {/* Tab */}
                             <div className="flex items-center gap-2 group cursor-pointer">
                                 <div
                                     className={`group-hover:bg-primary group-hover:border-primary size-8 border-2  rounded-full flex items-center justify-center duration-300 transition-all ${currentStep === i ? "bg-primary border-primary" : "border-non-active"}`}
@@ -195,7 +200,7 @@ function Booking() {
 
                             <div className="flex items-center justify-between bg-gray-100 border border-gray-200 rounded-2xl px-4 py-2">
                                 <h3 className="text-base font-bold tracking-widest text-blue-800">
-                                    {bookingId || "RSV"}
+                                    {bookingCode || "RSV"}
                                 </h3>
 
                                 <button
@@ -243,14 +248,6 @@ function Booking() {
                         >
                             Tutup
                         </button>
-                        {/* <button
-                            onClick={() =>
-                                router.visit(`/reservasi/${bookingId}`)
-                            }
-                            className="text-blue-700 text-sm font-medium hover:underline"
-                        >
-                            Lihat Rincian Reservasi
-                        </button> */}
                     </div>
                 </div>
             )}

@@ -7,7 +7,7 @@ use Inertia\Inertia;
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
 
-Route::get('/booking', [BookingController::class, 'index']);
+Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
 Route::post('/booking', [BookingController::class, 'storeBook'])->name('booking.store');
 
 Route::get('/check-reservation', [HomeController::class, 'checkReserve']);

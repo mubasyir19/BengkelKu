@@ -26,9 +26,17 @@ class BookingController extends Controller
 
     private function generateReservationCode(): string
     {
+        $attempts = 0;
+        $maxAttempts = 10; // Limit attempts to avoid infinite loop
+
         do {
+            if ($attempts >= $maxAttempts) {
+                // Fallback: use timestamp + random
+                return 'RSV-' . now()->format('YmdHis') . '-' . strtoupper(Str::random(4));
+            }
             // Format: RSV-20260302-AB12
             $code = 'RSV-' . now()->format('Ymd') . '-' . strtoupper(Str::random(4));
+            $attempts++;
         } while (Reservation::where('code', $code)->exists());
 
         return $code;
@@ -68,8 +76,7 @@ class BookingController extends Controller
             'status'              => 'pending',
         ]);
 
-        // stay on booking page and send code back via flash data
-        return redirect()->back()->with([
+        return redirect()->route('booking.index')->with([
             'success' => true,
             'reservation_code' => $reservation->code,
         ]);

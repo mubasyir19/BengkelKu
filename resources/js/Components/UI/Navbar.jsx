@@ -12,6 +12,9 @@ export default function Navbar() {
                     <a href="/">
                         <li className={`text-primary`}>Beranda</li>
                     </a>
+                    <a href="/booking">
+                        <li className={`text-primary`}>Booking</li>
+                    </a>
                     <a href="/check-reservation">
                         <li className={`text-primary`}>Cek Reservasi</li>
                     </a>
@@ -20,9 +23,9 @@ export default function Navbar() {
                     </a>
                 </ul>
                 <div className="">
-                    <a href="/booking">
+                    <a href="/login">
                         <button className="rounded-lg text-white text-center px-4 py-2 text-sm bg-primary">
-                            Mulai Reservasi
+                            Login Admin
                         </button>
                     </a>
                 </div>

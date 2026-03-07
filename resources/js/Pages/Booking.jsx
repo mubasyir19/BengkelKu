@@ -4,7 +4,7 @@ import InformasiPemesan from "../Components/Organism/BookingComponents/Informasi
 import DataKendaraan from "../Components/Organism/BookingComponents/DataKendaraan";
 import PilihLayanan from "../Components/Organism/BookingComponents/PilihLayanan";
 import FinalConfirmation from "../Components/Organism/BookingComponents/FinalConfirmation";
-import { useForm, router, usePage } from "@inertiajs/react";
+import { useForm, router, usePage, Head } from "@inertiajs/react";
 import { CircleCheck, Copy, Check } from "lucide-react";
 
 const tabs = [
@@ -89,6 +89,7 @@ function Booking() {
 
     return (
         <>
+            <Head title="Booking" />
             <div className="bg-background-light">
                 <div className="py-10 flex items-center justify-center gap-4 overflow-x-auto">
                     {tabs.map((tab, i) => (

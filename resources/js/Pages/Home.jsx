@@ -1,11 +1,12 @@
 import React from "react";
 import LandingPageLayout from "../Components/Layout/LandingPageLayout";
-import { Link } from "@inertiajs/react";
+import { Head, Link } from "@inertiajs/react";
 import { CalendarDays, ChartNoAxesCombined, ScrollText } from "lucide-react";
 
 function Home() {
     return (
         <div className="">
+            <Head title="Beranda" />
             <section className="py-24 bg-background-light">
                 <div className="container mx-auto px-4 md:px-6 lg:px-8 grid grid-cols-1 md:grid-cols-2 gap-12">
                     <div className="">

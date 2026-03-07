@@ -52,7 +52,7 @@ function CheckReservation() {
                                 >
                                     Nomor Telepon
                                 </label>
-                                <div className="mt-2 flex items-center gap-2 px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+                                <div className="mt-2 flex items-center gap-2 px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus-within:border-primary transition-all">
                                     <Phone className="w-5 h-5 text-gray-400" />
 
                                     <input
@@ -60,7 +60,7 @@ function CheckReservation() {
                                         placeholder="Contoh: 0812345..."
                                         value={formData.phoneNumber}
                                         onChange={handleChange}
-                                        className="w-full bg-transparent outline-none text-gray-700 placeholder:text-gray-400"
+                                        className="w-full bg-transparent outline-none text-gray-700 border border-none focus:ring-0 placeholder:text-gray-400"
                                     />
                                 </div>
                             </div>
@@ -71,7 +71,7 @@ function CheckReservation() {
                                 >
                                     ID Booking
                                 </label>
-                                <div className="mt-2 flex items-center gap-2 px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus-within:ring-2 focus-within:ring-primary focus-within:border-primary transition-all">
+                                <div className="mt-2 flex items-center gap-2 px-4 py-3 rounded-xl border border-gray-300 bg-gray-50 focus-within:border-primary transition-all">
                                     <Ticket className="w-5 h-5 text-gray-400" />
 
                                     <input
@@ -79,7 +79,7 @@ function CheckReservation() {
                                         placeholder="Contoh: AD-12345"
                                         value={formData.code}
                                         onChange={handleChange}
-                                        className="w-full bg-transparent outline-none text-gray-700 placeholder:text-gray-400"
+                                        className="w-full bg-transparent outline-none text-gray-700 border border-none focus:ring-0 placeholder:text-gray-400"
                                     />
                                 </div>
                             </div>

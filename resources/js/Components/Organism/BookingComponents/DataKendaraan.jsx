@@ -28,7 +28,7 @@ export default function DataKendaraan({ data, onChange, onNext, onPrev }) {
                             value={data.vehicle_type}
                             onChange={onChange}
                             defaultValue=""
-                            className="rounded-lg w-full px-3 py-2.5 text-sm border border-gray-300 bg-gray-50 focus-within:ring focus-within:ring-primary focus-within:border-primary transition-all"
+                            className="rounded-lg w-full px-3 py-2.5 text-sm border border-gray-300 bg-gray-50 focus-within:border-primary transition-all"
                         >
                             <option value="" disabled>
                                 Pilih Merek Kendaraan Anda
@@ -52,7 +52,7 @@ export default function DataKendaraan({ data, onChange, onNext, onPrev }) {
                     >
                         Model Kendaraan <span className="text-red-500">*</span>
                     </label>
-                    <div className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg border border-gray-300 bg-gray-50 focus-within:ring focus-within:ring-primary focus-within:border-primary transition-all">
+                    <div className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg border border-gray-300 bg-gray-50 focus-within:border-primary transition-all">
                         <input
                             type="text"
                             name="vehicle_model"
@@ -60,7 +60,7 @@ export default function DataKendaraan({ data, onChange, onNext, onPrev }) {
                             value={data.vehicle_model}
                             onChange={onChange}
                             required
-                            className="w-full bg-input outline-none text-sm text-gray-700 placeholder:text-gray-400"
+                            className="w-full bg-input outline-none text-sm text-gray-700 border border-none focus:ring-0 placeholder:text-gray-400"
                         />
                     </div>
                 </div>
@@ -72,7 +72,7 @@ export default function DataKendaraan({ data, onChange, onNext, onPrev }) {
                         Plat Nomor Kendaraan{" "}
                         <span className="text-red-500">*</span>
                     </label>
-                    <div className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg border border-gray-300 bg-gray-50 focus-within:ring focus-within:ring-primary focus-within:border-primary transition-all">
+                    <div className="mt-2 flex items-center gap-2 px-3 py-2.5 rounded-lg border border-gray-300 bg-gray-50 focus-within:border-primary transition-all">
                         <input
                             type="text"
                             name="vehicle_plate"
@@ -80,7 +80,7 @@ export default function DataKendaraan({ data, onChange, onNext, onPrev }) {
                             value={data.vehicle_plate}
                             onChange={onChange}
                             required
-                            className="w-full bg-input outline-none text-sm text-gray-700 placeholder:text-gray-400"
+                            className="w-full bg-input outline-none text-sm text-gray-700 border border-none focus:ring-0 placeholder:text-gray-400"
                         />
                     </div>
                 </div>

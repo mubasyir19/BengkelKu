@@ -32,12 +32,12 @@ export default function Login({ status, canResetPassword }) {
                             BengkelKu
                         </h2> */}
                             <h1 className="mt-5 text-5xl leading-14 font-extrabold text-white">
-                                Kelola Properti Anda Dengan Cerdas.
+                                Kelola Antrian Bengkel Anda Dengan Cerdas.
                             </h1>
                             <p className="mt-6 text-white">
-                                Streamline your boarding house operations, from
-                                tenant management to automated financial
-                                reporting.
+                                Optimalkan operasional bengkel Anda, mulai dari
+                                penjadwalan servis, manajemen montir, hingga
+                                laporan pendapatan secara otomatis dan akurat.
                             </p>
                         </div>
                     </div>

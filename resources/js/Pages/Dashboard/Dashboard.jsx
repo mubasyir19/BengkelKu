@@ -135,6 +135,9 @@ export default function Dashboard() {
                         Aksi Cepat
                     </h2>
                     <hr className="my-3 w-full border border-gray-200" />
+                    <div className="bg-white rounded-2xl p-4 flex items-stretch gap-5">
+                        <a href="#" className=""></a>
+                    </div>
                 </section>
             </div>
         </AuthenticatedLayout>

@@ -34,12 +34,10 @@ class ReservationController extends Controller
     {
         $reservation = Reservation::findOrFail($id);
 
-        // Perbaikan: Jalankan validasi pada $request
         $validated = $request->validate([
             'status' => ['required', 'string', 'in:pending,confirmed,processing,completed,cancelled']
         ]);
 
-        // Sekarang $validated['status'] berisi string status (misal: 'confirmed')
         $reservation->update([
             'status' => $validated['status']
         ]);

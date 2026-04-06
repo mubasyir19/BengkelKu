@@ -1,12 +1,12 @@
 # BengkelKu - Sistem Reservasi Bengkel Online
 
-[![Laravel](https://img.shields.io/badge/Laravel-11.x-red.svg)](https://laravel.com)
+[![Laravel](https://img.shields.io/badge/Laravel-12.x-red.svg)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.2+-blue.svg)](https://php.net)
 [![React](https://img.shields.io/badge/React-18.x-61dafb.svg)](https://reactjs.org)
 [![Inertia.js](https://img.shields.io/badge/Inertia.js-1.x-9553e9.svg)](https://inertiajs.com)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.x-38bdf8.svg)](https://tailwindcss.com)
 
-BengkelKu adalah aplikasi web modern untuk sistem reservasi bengkel kendaraan yang dibangun dengan Laravel 11, Inertia.js, dan React. Aplikasi ini memungkinkan pelanggan untuk melakukan reservasi servis kendaraan secara online dan memantau status reservasi mereka secara real-time.
+BengkelKu adalah aplikasi web modern untuk sistem reservasi bengkel kendaraan yang dibangun dengan Laravel 12, Inertia.js, dan React. Aplikasi ini memungkinkan pelanggan untuk melakukan reservasi servis kendaraan secara online dan memantau status reservasi mereka secara real-time.
 
 ## ✨ Fitur Utama
 
@@ -26,7 +26,7 @@ BengkelKu adalah aplikasi web modern untuk sistem reservasi bengkel kendaraan ya
 
 ## 🛠️ Teknologi yang Digunakan
 
-- **Backend**: Laravel 11 (PHP 8.2+)
+- **Backend**: Laravel 12 (PHP 8.2+)
 - **Frontend**: React 18 dengan Inertia.js
 - **Styling**: Tailwind CSS
 - **Database**: MySQL/PostgreSQL dengan Eloquent ORM
@@ -47,8 +47,8 @@ BengkelKu adalah aplikasi web modern untuk sistem reservasi bengkel kendaraan ya
 ### 1. Clone Repository
 
 ```bash
-git clone https://github.com/username/bengkelku.git
-cd bengkelku
+git clone https://github.com/mubasyir19/BengkelKu.git
+cd BengkelKu
 ```
 
 ### 2. Install Dependencies PHP
@@ -174,7 +174,7 @@ Proyek ini menggunakan lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanj
 
 ## 👥 Tim Pengembang
 
-- **Developer**: [Nama Anda]
+- **Developer**: Mahdy Mubasyir
 - **Framework**: Laravel Community
 
 ## 📞 Kontak
@@ -182,7 +182,7 @@ Proyek ini menggunakan lisensi MIT. Lihat file `LICENSE` untuk detail lebih lanj
 Jika Anda memiliki pertanyaan atau saran, silakan hubungi:
 
 - Email: your-email@example.com
-- GitHub Issues: [Buat Issue Baru](https://github.com/username/bengkelku/issues)
+- GitHub Issues: [Buat Issue Baru](https://github.com/mubasyir19/BengkelKu/issues)
 
 ---
 

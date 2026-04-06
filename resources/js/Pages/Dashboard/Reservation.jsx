@@ -1,3 +1,4 @@
+import DeleteDialog from "@/Components/Molecules/DeleteDialog";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { formatDateToIndonesian } from "@/Utils/formatDate";
 import { Head, router, usePage } from "@inertiajs/react";
@@ -77,9 +78,12 @@ export default function Reservation() {
                                     {/* Actions */}
                                     <td className="px-6 py-4">
                                         <div className="flex items-center justify-center gap-3">
-                                            <button className="px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition">
+                                            <a
+                                                href={`/dashboard/reservation/edit/${data.id}`}
+                                                className="px-3 py-1 text-sm font-medium text-blue-600 hover:bg-blue-50 rounded-lg transition"
+                                            >
                                                 Edit
-                                            </button>
+                                            </a>
                                             <button className="px-3 py-1 text-sm font-medium text-red-600 hover:bg-red-50 rounded-lg transition">
                                                 Hapus
                                             </button>
@@ -129,6 +133,7 @@ export default function Reservation() {
                     </div>
                 </div>
             </section>
+            {/* <DeleteDialog /> */}
         </AuthenticatedLayout>
     );
 }

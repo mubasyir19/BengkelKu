@@ -57,6 +57,7 @@ class BookingController extends Controller
             'vehicle_plate' => ['required', 'string', 'max:20'],
             'service_id' => ['required', 'uuid', 'exists:services,id'],
             'reservation_date' => ['required', 'date', 'after_or_equal:today'],
+            'note' => ['nullable', 'string', 'max:2000'],
             'time_slot_id' => ['required', 'uuid', 'exists:time_slots,id'],
         ]);
 
@@ -73,6 +74,7 @@ class BookingController extends Controller
             'service_id'          => $validated['service_id'],
             'reservation_date'    => $reservationDate,
             'time_slot_id'        => $validated['time_slot_id'],
+            'note'                => $validated['note'],
             'status'              => 'pending',
         ]);
 

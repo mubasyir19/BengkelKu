@@ -14,6 +14,7 @@ Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
     Route::get('/dashboard/reservation', [ReservationController::class, 'reservationDashboard'])->name('reservation');
+    Route::get('/dashboard/reservation/edit/{id}', [ReservationController::class, 'reservationEdit'])->name('reservation.edit');
 
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
@@ -25,5 +26,7 @@ Route::post('/booking', [BookingController::class, 'storeBook'])->name('booking.
 
 Route::get('/check-reservation', [HomeController::class, 'checkReserve']);
 Route::get('/contact', [HomeController::class, 'contact']);
+
+Route::put('/reservation/{id}/status', [ReservationController::class, 'updateStatus'])->name('reservation.updateStatus');
 
 require __DIR__ . '/auth.php';

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Reservation;
+use Illuminate\Http\Request;
 use Inertia\Inertia;
 
 class ReservationController extends Controller
@@ -20,6 +21,35 @@ class ReservationController extends Controller
             'data' => $listReservation,
         ]);
     }
+
+    public function reservationEdit(string $id)
+    {
+        $dataReservation = Reservation::with(['service', 'timeSlot'])->find($id);
+        return Inertia::render('Dashboard/Reservation/Edit', [
+            'data' => $dataReservation,
+        ]);
+    }
+
+    public function updateStatus(string $id, Request $request)
+    {
+        $reservation = Reservation::findOrFail($id);
+
+        // Perbaikan: Jalankan validasi pada $request
+        $validated = $request->validate([
+            'status' => ['required', 'string', 'in:pending,confirmed,processing,completed,cancelled']
+        ]);
+
+        // Sekarang $validated['status'] berisi string status (misal: 'confirmed')
+        $reservation->update([
+            'status' => $validated['status']
+        ]);
+
+        return redirect()->back()->with('message', 'Status reservasi berhasil diperbarui!');
+    }
+
+    public function delete(string $id, Request $request) {}
+
+    public function cancelReservation(string $id, Request $request) {}
 
     public function checkQueue() {}
 }

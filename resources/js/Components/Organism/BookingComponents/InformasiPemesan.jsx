@@ -44,7 +44,7 @@ export default function InformasiPemesan({ data, onChange, onNext }) {
                         <input
                             type="email"
                             name="customer_email"
-                            placeholder="Contoh: 0812345..."
+                            placeholder="Contoh: john_doe@mail.com"
                             value={data.customer_email}
                             onChange={onChange}
                             required

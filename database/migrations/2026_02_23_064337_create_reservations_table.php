@@ -35,6 +35,7 @@ return new class extends Migration
             $table->date('reservation_date');
             $table->foreignUuid('time_slot_id')->constrained('time_slots')->cascadeOnDelete();
             $table->enum('status', ['pending', 'confirmed', 'processing', 'completed', 'cancelled'])->default('pending');
+            $table->text('note')->nullable();
             $table->timestamps();
         });
     }

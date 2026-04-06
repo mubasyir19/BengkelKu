@@ -120,25 +120,23 @@ export default function PilihLayanan({ data, onPrev, onNext, onChange }) {
                         </div>
                     </div>
                 </div>
+                <div className="mt-10 space-y-2">
+                    <label
+                        htmlFor="note"
+                        className="text-background-dark font-bold text-lg"
+                    >
+                        Catatan / Keluhan Kendaraan Anda
+                    </label>
+                    <textarea
+                        name="note"
+                        id="note"
+                        rows={5}
+                        value={data.note}
+                        onChange={onChange}
+                        className="block border border-gray-200 rounded-xl w-full"
+                    ></textarea>
+                </div>
             </div>
-            {/* <div className="border-t border-gray-200 p-6 flex items-stretch justify-between">
-                <button
-                    onClick={onPrev}
-                    className="py-3 px-6 rounded-lg text-primary flex items-center justify-center gap-2 cursor-pointer border border-primary"
-                >
-                    <ArrowLeft className="size-5 text-primary" />
-                    <span className="text-primary font-semibold text-sm">
-                        Kembali
-                    </span>
-                </button>
-                <button
-                    className="py-3 px-6 bg-primary rounded-lg text-white flex items-center justify-center gap-2 cursor-pointer  border border-primary"
-                >
-                    <span className="text-white font-semibold text-sm">
-                        Lanjutkan
-                    </span>
-                </button>
-            </div> */}
             <div className="mt-10 bg-dark rounded-2xl p-8 flex flex-col md:flex-row items-center gap-4 justify-between">
                 <div className="">
                     <p className="text-xs uppercase text-[#60A5FA] font-bold">

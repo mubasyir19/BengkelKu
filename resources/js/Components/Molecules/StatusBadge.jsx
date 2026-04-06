@@ -38,9 +38,9 @@ export default function StatusBadge({ status }) {
 
     return (
         <div
-            className={`${config.container} rounded-full flex items-center gap-2 px-4 py-1 border`}
+            className={`${config.container} rounded-full flex items-center gap-2 px-4 py-1 border w-fit`}
         >
-            <div className={`size-1.5 rounded-full ${config.dot}`}></div>
+            {/* <div className={`size-1.5 rounded-full ${config.dot}`}></div> */}
             <span className="text-xs font-semibold whitespace-nowrap">
                 {config.label}
             </span>

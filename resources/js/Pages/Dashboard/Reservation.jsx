@@ -1,4 +1,5 @@
 import DeleteDialog from "@/Components/Molecules/DeleteDialog";
+import StatusBadge from "@/Components/Molecules/StatusBadge";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { formatDateToIndonesian } from "@/Utils/formatDate";
 import { Head, router, usePage } from "@inertiajs/react";
@@ -70,9 +71,10 @@ export default function Reservation() {
 
                                     {/* Status Badge */}
                                     <td className="px-6 py-4">
-                                        <span className="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">
+                                        <StatusBadge status={data.status} />
+                                        {/* <span className="px-3 py-1 text-xs font-semibold rounded-full bg-yellow-100 text-yellow-700">
                                             {data.status ?? "Pending"}
-                                        </span>
+                                        </span> */}
                                     </td>
 
                                     {/* Actions */}

@@ -24,7 +24,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/booking', [BookingController::class, 'index'])->name('booking.index');
 Route::post('/booking', [BookingController::class, 'storeBook'])->name('booking.store');
 
-Route::get('/check-reservation', [HomeController::class, 'checkReserve']);
+Route::get('/check-reservation', [HomeController::class, 'checkReserve'])->name('reservation.check');
 Route::get('/contact', [HomeController::class, 'contact']);
 
 Route::put('/reservation/{id}/status', [ReservationController::class, 'updateStatus'])->name('reservation.updateStatus');
